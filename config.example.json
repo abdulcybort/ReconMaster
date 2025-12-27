@@ -1,0 +1,6 @@
+{
+    "shodan": "YOUR_SHODAN_API_KEY_HERE",
+    "securitytrails": "YOUR_SECURITYTRAILS_API_KEY_HERE",
+    "virustotal": "YOUR_VIRUSTOTAL_API_KEY_HERE",
+    "ipinfo": "YOUR_IPINFO_API_KEY_HERE"
+}
