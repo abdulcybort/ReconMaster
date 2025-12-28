@@ -286,7 +286,8 @@ git clone https://github.com/abdulcybort/ReconMaster.git
 cd ReconMaster
 
 # Install Python dependencies
-pip3 install requests urllib
+pip3 install requests urllib3
+
 # Run setup wizard for API keys
 python3 recon_master.py --setup
 Manual Installation
@@ -378,6 +379,7 @@ python3 recon_master.py --enum-only example.com --scan-vulns
 # Force specific scan type
 python3 recon_master.py -t example.com --type domain
 Command Line Options
+text
 Options:
   -h, --help            Show help message and exit
   -t TARGET, --target TARGET
@@ -558,6 +560,8 @@ Example 2: Comprehensive Subdomain Discovery
 bash
 python3 recon_master.py -t example.com --enum-subs
 New Workflow:
+
+text
 Phase 1: Passive Discovery (5 sources)
   → crt.sh certificate transparency logs
   → HackerTarget API enumeration
@@ -605,6 +609,7 @@ Pre-deployment security checks
 Compliance and audit requirements
 
 Example Output
+text
 ═══════════════════════════════════════════════
   VULNERABILITY SCAN SUMMARY
 ═══════════════════════════════════════════════
@@ -701,6 +706,7 @@ json
   }
 }
 File Naming Convention
+text
 recon_TARGET_TIMESTAMP.json
 Example: recon_example_com_20240115_143022.json
 
@@ -895,6 +901,8 @@ Security researchers sharing knowledge and techniques
 
 📄 License
 This project is licensed under the MIT License.
+
+text
 MIT License
 
 Copyright (c) 2024 Abdulbasid Yakubu | cy30rt
