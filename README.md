@@ -1,307 +1,160 @@
-🔍 ReconMaster
+# 🔍 ReconMaster
+
 <div align="center">
-https://img.shields.io/badge/version-1.2.0-blue.svg
-https://img.shields.io/badge/python-3.7+-brightgreen.svg
-https://img.shields.io/badge/license-MIT-orange.svg
-https://img.shields.io/badge/platform-Kali%2520%257C%2520Termux-red.svg
-https://img.shields.io/badge/status-beta-yellow.svg
 
-Professional Bug Bounty Reconnaissance Tool
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Python](https://img.shields.io/badge/python-3.7+-brightgreen.svg)
+![License](https://img.shields.io/badge/license-MIT-orange.svg)
+![Platform](https://img.shields.io/badge/platform-Kali%20%7C%20Termux-red.svg)
 
-Created by Abdulbasid Yakubu | cy30rt
+**Professional Bug Bounty Reconnaissance Tool**
 
-Multi-API intelligence gathering with Advanced Vulnerability Scanning for security researchers and bug bounty hunters
+*Created by Abdulbasid Yakubu | cy30rt*
 
-Features • Installation • Usage • Vulnerability Scanning • Examples
+Multi-API intelligence gathering for security researchers and bug bounty hunters
+
+[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Configuration](#-configuration) • [Examples](#-examples)
 
 </div>
-📋 Table of Contents
-Overview
 
-✨ Enhanced Features
+---
+
+## 📋 Table of Contents
 
-Requirements
+- [Overview](#-overview)
+- [Features](#-features)
+- [Requirements](#-requirements)
+- [Installation](#-installation)
+- [Configuration](#-configuration)
+- [Usage](#-usage)
+- [API Integration](#-api-integration)
+- [Examples](#-examples)
+- [Output](#-output)
+- [Troubleshooting](#-troubleshooting)
+- [Contributing](#-contributing)
+- [Legal Disclaimer](#-legal-disclaimer)
+- [Author](#-author)
+- [License](#-license)
 
-Installation
+---
 
-Configuration
+## 🎯 Overview
 
-Usage
+**ReconMaster** is a powerful, professional-grade reconnaissance tool designed for bug bounty hunters and security researchers. It aggregates data from multiple threat intelligence and reconnaissance APIs to provide comprehensive information about targets in a single, streamlined workflow.
 
-Vulnerability Scanning
+### Why ReconMaster?
 
-Risk Assessment
+- **Multi-Source Intelligence**: Combines data from four major reconnaissance APIs
+- **Cross-Platform**: Works seamlessly on both Kali Linux and Termux (Android)
+- **Professional Output**: Clean, color-coded CLI interface with structured JSON export
+- **Fully Functional**: 100% working tool with comprehensive error handling
+- **Modular Design**: Easy to extend and customize for your needs
+- **Rate Limiting Aware**: Built-in delays to respect API rate limits
+- **Production Ready**: Battle-tested for real-world bug bounty hunting
 
-API Integration
+---
 
-Examples
+## ✨ Features
 
-Output
+### 🔍 Intelligence Gathering Capabilities
 
-Troubleshooting
+- **Network Intelligence**
+  - Open port discovery and service detection
+  - Banner grabbing and service fingerprinting
+  - Historical host data analysis
+  - Vulnerability detection
 
-Contributing
+- **Domain Intelligence**
+  - Comprehensive subdomain enumeration
+  - DNS history tracking and analysis
+  - WHOIS information retrieval
+  - Domain relationship mapping
 
-Legal Disclaimer
+- **Geolocation Intelligence**
+  - Precise IP geolocation data
+  - ASN and network information
+  - Organization and ISP details
+  - Network infrastructure mapping
 
-Author
+- **Security Intelligence**
+  - Malware and threat analysis
+  - Domain/IP reputation scoring
+  - Security vendor consensus
+  - Threat actor attribution
 
-License
+### 🎨 User Experience
 
-🎯 Overview
-ReconMaster v1.2.0 is a powerful, professional-grade reconnaissance tool designed for bug bounty hunters and security researchers. It aggregates data from multiple threat intelligence and reconnaissance APIs to provide comprehensive information about targets in a single, streamlined workflow, now with Advanced Vulnerability Scanning.
+- Professional ASCII banner with author credits
+- Color-coded output (success, warning, error, info)
+- Real-time progress indicators
+- Interactive setup wizard
+- Auto-generated timestamped reports
+- Structured JSON export for further analysis
+- Detailed scan summaries
 
-NEW IN v1.2.0: Vulnerability Scanner Edition
-This major update introduces a comprehensive vulnerability scanning module that performs automated security checks on discovered subdomains, providing risk assessment and prioritization.
+### 🛠️ Technical Features
 
-✨ Enhanced Features
-🔍 Intelligence Gathering Capabilities (Enhanced)
-Network Intelligence
+- Full cross-platform compatibility (Kali Linux & Termux)
+- Intelligent target type detection (IP vs Domain)
+- Automatic domain-to-IP resolution
+- Robust session management with custom user agents
+- Configurable timeouts for all API calls
+- Graceful error handling and recovery
+- SSL verification bypass option for testing environments
+- Modular API handler architecture
 
-Open port discovery and service detection
+---
 
-Banner grabbing and service fingerprinting
+## 📦 Requirements
 
-Historical host data analysis
+### System Requirements
 
-Vulnerability detection
+- **Python**: Version 3.7 or higher
+- **Operating System**: Linux (Kali, Ubuntu, Debian) or Termux (Android)
+- **Internet**: Active internet connection
+- **Terminal**: Terminal with ANSI color support
 
-Domain Intelligence
+### Python Dependencies
 
-Comprehensive subdomain enumeration from 5+ sources
+- `requests` >= 2.31.0
+- `urllib3` >= 2.0.0
+- `colorama` >= 0.4.6
 
-DNS history tracking and analysis
+### API Requirements
 
-WHOIS information retrieval
-
-Certificate transparency log searching (crt.sh)
-
-Multi-source passive discovery
-
-Geolocation Intelligence
-
-Precise IP geolocation data
-
-ASN and network information
-
-Organization and ISP details
-
-Network infrastructure mapping
-
-Security Intelligence
-
-Malware and threat analysis
-
-Domain/IP reputation scoring
-
-Security vendor consensus
-
-Threat actor attribution
-
-🛡️ NEW: Advanced Vulnerability Scanner Module
-SSL/TLS Security Analysis
-✅ Certificate validity and expiry checks
-
-✅ Self-signed certificate detection
-
-✅ Certificate chain validation
-
-✅ Expiry date tracking with alerts
-
-✅ Issuer and subject verification
-
-Security Headers Analysis
-✅ HSTS (Strict-Transport-Security) enforcement
-
-✅ Clickjacking protection (X-Frame-Options)
-
-✅ MIME sniffing prevention (X-Content-Type-Options)
-
-✅ Content Security Policy (CSP) implementation
-
-✅ XSS Protection header validation
-
-✅ CORS configuration security analysis
-
-Common Vulnerability Detection
-✅ Clickjacking vulnerability scanning
-
-✅ CORS misconfiguration detection
-
-✅ Directory listing exposure checks
-
-✅ Server information disclosure analysis
-
-✅ Backup and configuration file exposure
-
-✅ Default page and error disclosure
-
-Sensitive File Exposure Detection
-✅ Exposed .git directories and repositories
-
-✅ Exposed .env configuration files with credentials
-
-✅ Backup files (.zip, .sql, .bak, .tar.gz)
-
-✅ Log files and debugging endpoints
-
-✅ Admin panel and login page discovery
-
-Subdomain Takeover Detection (9+ Services)
-✅ GitHub Pages: "There isn't a GitHub Pages site here"
-
-✅ Heroku: "No such app", "herokucdn.com"
-
-✅ AWS S3: "NoSuchBucket", "The specified bucket does not exist"
-
-✅ Azure: "404 Web Site not found", "azurewebsites.net"
-
-✅ CloudFront: "Bad request", "ERROR: The request could not be satisfied"
-
-✅ Shopify: "Sorry, this shop is currently unavailable"
-
-✅ Tumblr: "Whatever you were looking for doesn't currently exist"
-
-✅ WordPress: "Do you want to register"
-
-✅ Fastly: "Fastly error: unknown domain"
-
-📊 NEW: Professional Risk Assessment System
-Automated Risk Scoring (0-100+ points)
-🔴 CRITICAL (50+ points): Immediate action required
-
-🟠 HIGH (30-49 points): High priority remediation
-
-🟡 MEDIUM (15-29 points): Moderate risk
-
-🟢 LOW (1-14 points): Low priority issues
-
-✅ SECURE (0 points): No significant security issues found
-
-Risk Weighting Algorithm
-+50 points: Subdomain takeover possible
-
-+35 points: Exposed .env file with credentials
-
-+30 points: Exposed .git directory
-
-+25 points: No HTTPS available
-
-+25 points: Exposed backup files
-
-+20 points: Invalid SSL certificate
-
-+15 points: Expired SSL certificate
-
-+15 points: CORS misconfiguration
-
-+10 points: Self-signed SSL certificate
-
-+10 points: Clickjacking vulnerability
-
-+5 points: Missing security headers (each)
-
-+5 points: Server information disclosure
-
-🎨 Enhanced User Experience
-Professional ASCII banner with author credits
-
-Color-coded risk level indicators (🟢🟡🟠🔴)
-
-Real-time vulnerability scanning progress
-
-Emoji-based risk visualization
-
-Interactive setup wizard
-
-Auto-generated timestamped reports
-
-Structured JSON vulnerability reports
-
-Detailed scan summaries with statistics
-
-🚀 Performance Enhancements
-Multi-threaded DNS brute force (10 threads)
-
-Concurrent vulnerability scanning
-
-Intelligent rate limiting across all APIs
-
-Configurable timeouts and retries
-
-Session reuse for HTTP requests
-
-Connection pooling optimization
-
-Caching for repeated requests
-
-📁 Enhanced Reporting & Export
-Terminal output with color-coded risk levels
-
-JSON export with comprehensive vulnerability data
-
-Risk score calculation for each subdomain
-
-Vulnerability categorization and prioritization
-
-Remediation recommendations
-
-Scan duration and statistics
-
-📦 Requirements
-System Requirements
-Python: Version 3.7 or higher
-
-Operating System: Linux (Kali, Ubuntu, Debian) or Termux (Android)
-
-Internet: Active internet connection
-
-Terminal: Terminal with ANSI color support
-
-Memory: 2GB RAM recommended for large scans
-
-Python Dependencies
-requests >= 2.31.0
-
-urllib3 >= 2.0.0
-
-colorama >= 0.4.6 (optional, for enhanced colors)
-
-API Requirements
 You'll need API keys from the following services (all offer free tiers):
 
-Shodan - Network intelligence and port scanning
+1. **Shodan** - Network intelligence and port scanning
+2. **SecurityTrails** - Domain and DNS intelligence
+3. **IPInfo** - Geolocation and network data
+4. **VirusTotal** - Security and malware analysis
 
-SecurityTrails - Domain and DNS intelligence
+---
 
-IPInfo - Geolocation and network data
+## 🚀 Installation
 
-VirusTotal - Security and malware analysis
+### Quick Install (Linux/Termux)
 
-🚀 Installation
-Quick Install (Linux/Termux)
 bash
-# Clone the repository
+#Clone the repository
 git clone https://github.com/abdulcybort/ReconMaster.git
 cd ReconMaster
 
-# Install Python dependencies
-pip3 install requests urllib3
-
-# Run setup wizard for API keys
-python3 recon_master.py --setup
+# Run automated installer (Linux only)
+chmod +x install.sh
+./install.sh
 Manual Installation
 On Kali Linux / Ubuntu / Debian
 bash
+# Clone repository
+git clone https://github.com/abdulcybort/ReconMaster.git
+cd ReconMaster
+
 # Update system packages
 sudo apt-get update
 
 # Install Python and pip
-sudo apt-get install python3 python3-pip git -y
-
-# Clone repository
-git clone https://github.com/abdulcybort/ReconMaster.git
-cd ReconMaster
+sudo apt-get install python3 python3-pip -y
 
 # Install Python dependencies
 pip3 install -r requirements.txt
@@ -314,14 +167,14 @@ bash
 pkg update -y && pkg upgrade -y
 
 # Install required packages
-pkg install python git openssl-tool -y
+pkg install python git -y
 
 # Clone repository
 git clone https://github.com/abdulcybort/ReconMaster.git
 cd ReconMaster
 
 # Install Python dependencies
-pip install requests urllib3
+pip install -r requirements.txt
 
 # Make script executable
 chmod +x recon_master.py
@@ -329,15 +182,24 @@ chmod +x recon_master.py
 # Optional: Add to PATH for easy access
 cp recon_master.py $PREFIX/bin/reconmaster
 chmod +x $PREFIX/bin/reconmaster
+Termux Notes:
 
-# Grant storage permissions
-termux-setup-storage
+Works on Android 7.0+
+
+Install Termux from F-Droid for best compatibility
+
+Grant storage permissions: termux-setup-storage
+
+Fix SSL errors: pkg install openssl-tool
+
 ⚙️ Configuration
 Interactive Setup (Recommended)
 Run the built-in setup wizard to configure your API keys:
 
 bash
 python3 recon_master.py --setup
+The wizard will guide you through entering each API key. You can skip any API by pressing Enter if you don't have that particular key.
+
 Manual Configuration
 Create or edit config.json in the tool directory:
 
@@ -348,38 +210,66 @@ json
     "virustotal": "YOUR_VIRUSTOTAL_API_KEY",
     "ipinfo": "YOUR_IPINFO_API_KEY"
 }
+Termux-specific Configuration:
+
+Grant storage permissions:
+
+bash
+termux-setup-storage
+If you get SSL errors, install:
+
+bash
+pkg install openssl-tool
+For better performance, install:
+
+bash
+pkg install python-numpy
 Getting API Keys (Free Tier)
-Shodan: https://account.shodan.io/register
+Shodan
 
-SecurityTrails: https://securitytrails.com/app/signup
+Visit: https://account.shodan.io/register
 
-IPInfo: https://ipinfo.io/signup
+Sign up for a free account
 
-VirusTotal: https://www.virustotal.com/gui/join-us
+Navigate to: https://account.shodan.io/
+
+Copy your API key
+
+SecurityTrails
+
+Visit: https://securitytrails.com/app/signup
+
+Create a free account
+
+Go to: https://securitytrails.com/app/account/credentials
+
+Copy your API key
+
+IPInfo
+
+Visit: https://ipinfo.io/signup
+
+Register for free access
+
+Navigate to: https://ipinfo.io/account/token
+
+Copy your access token
+
+VirusTotal
+
+Visit: https://www.virustotal.com/gui/join-us
+
+Create a free account
+
+Go to: https://www.virustotal.com/gui/my-apikey
+
+Copy your API key
 
 📖 Usage
 Basic Usage
 bash
-# Basic domain scan
-python3 recon_master.py -t example.com
-
-# Basic IP scan
-python3 recon_master.py -t 8.8.8.8
-Advanced Usage with New Features
-bash
-# Subdomain enumeration with vulnerability scanning
-python3 recon_master.py -t example.com --enum-subs --scan-vulns
-
-# Subdomain enumeration only (no API calls)
-python3 recon_master.py --enum-only example.com
-
-# Subdomain enumeration + vulnerability scan
-python3 recon_master.py --enum-only example.com --scan-vulns
-
-# Force specific scan type
-python3 recon_master.py -t example.com --type domain
+python3 recon_master.py -t TARGET
 Command Line Options
-text
 Options:
   -h, --help            Show help message and exit
   -t TARGET, --target TARGET
@@ -389,394 +279,290 @@ Options:
   --setup               Run interactive setup wizard
   -o OUTPUT, --output OUTPUT
                         Custom output filename (optional)
-  --enum-subs           Enable comprehensive subdomain enumeration
-  --scan-vulns          Enable vulnerability scanning on discovered subdomains
-  --enum-only DOMAIN    Run subdomain enumeration only (no other recon)
   -v, --version         Show version information
-🛡️ Vulnerability Scanning
-Scan Methodology
-ReconMaster performs comprehensive security checks in multiple phases:
+Target Types
+auto (default): Automatically detects whether target is IP or domain
 
-Phase 1: Service Discovery
-HTTP/HTTPS accessibility verification
+ip: Forces IP-based reconnaissance workflow
 
-Port 80/443 availability checking
+domain: Forces domain-based reconnaissance workflow
 
-Redirect chain analysis
-
-Server header and technology detection
-
-Phase 2: SSL/TLS Analysis
-Certificate validity and chain verification
-
-Expiry date calculation and warnings
-
-Self-signed certificate detection
-
-Issuer and subject validation
-
-Phase 3: Security Headers Check
-Complete OWASP-recommended header validation
-
-CSP policy analysis and recommendations
-
-HSTS configuration verification
-
-CORS security settings analysis
-
-Phase 4: Content Security Analysis
-Directory traversal and listing checks
-
-Backup and configuration file detection
-
-Source code and repository exposure
-
-Admin interface and login page discovery
-
-Phase 5: Takeover Vulnerability Analysis
-Service-specific fingerprint matching
-
-Error page content analysis
-
-DNS record verification
-
-Wildcard and CNAME record analysis
-
-Scan Coverage
-Vulnerability Type	Checks Performed	Risk Weight
-SSL/TLS Issues	5 different checks	10-20 points
-Security Headers	6 header validations	5 points each
-File Exposure	8 file type detections	25-35 points
-Configuration	5 config checks	5-15 points
-Takeover	9 service fingerprints	50 points
-📊 Risk Assessment
-Risk Level Definitions
-🔴 CRITICAL (50+ points)
-Immediate attention required. Examples:
-
-Subdomain takeover vulnerabilities
-
-Exposed .env files with API keys/credentials
-
-Critical SSL misconfigurations
-
-Multiple high-risk vulnerabilities combined
-
-🟠 HIGH (30-49 points)
-High priority for remediation. Examples:
-
-Exposed .git repositories
-
-Multiple security headers missing
-
-Expired SSL certificates
-
-Self-signed certificates in production
-
-🟡 MEDIUM (15-29 points)
-Moderate risk requiring attention. Examples:
-
-Clickjacking vulnerabilities
-
-CORS misconfigurations
-
-Server information disclosure
-
-Mixed content issues
-
-🟢 LOW (1-14 points)
-Low priority security improvements. Examples:
-
-Missing individual security headers
-
-Minor configuration issues
-
-Informational findings
-
-✅ SECURE (0 points)
-No significant security issues detected.
-
-Scoring Examples
-Subdomain with takeover vulnerability: 50+ points (CRITICAL)
-
-Subdomain with exposed .env file: 35+ points (HIGH)
-
-Subdomain with expired SSL + missing headers: 20+ points (MEDIUM)
-
-Subdomain with only minor issues: 5-10 points (LOW)
-
-Properly secured subdomain: 0 points (SECURE)
-
-🔧 API Integration
-Enhanced API Capabilities
-API	Free Tier	Rate Limit	Enhanced Capabilities
+Termux Usage Note: Use python instead of python3:
+python recon_master.py -t example.com
+ API Integration
+API Capabilities
+API	Free Tier	Rate Limit	Capabilities
 Shodan	✅ Yes	Varies	Port scanning, service detection, vulnerabilities
-SecurityTrails	✅ Yes	50/month	Subdomains, DNS records, WHOIS, historical data
-IPInfo	✅ Yes	50k/month	Geolocation, ASN, organization, network data
-VirusTotal	✅ Yes	4/minute	Enhanced security analysis with risk assessment
-Passive Intelligence Sources (New)
-crt.sh: Certificate transparency log searching
+SecurityTrails	✅ Yes	50/month	Subdomains, DNS records, WHOIS
+IPInfo	✅ Yes	50k/month	Geolocation, ASN, organization
+VirusTotal	✅ Yes	4/minute	Security analysis, reputation
+How It Works
+Target Analysis: Tool automatically detects if target is IP or domain
 
-HackerTarget: Subdomain enumeration API
+API Selection: Chooses appropriate APIs based on target type
 
-ThreatCrowd: Threat intelligence and subdomains
+Sequential Queries: Queries each API with built-in rate limiting
 
-AlienVault OTX: Passive DNS data
+Data Aggregation: Combines all results into unified report
 
-URLScan.io: Recent scan results and subdomains
-
-API Workflow
-Target Analysis: Automatically detects IP vs Domain
-
-API Selection: Chooses appropriate APIs based on target
-
-Sequential Queries: Rate-limited API calls with delays
-
-Data Aggregation: Combines results from all sources
-
-Vulnerability Scanning: Security checks on discovered assets
-
-Risk Assessment: Automated scoring and prioritization
-
-Report Generation: Structured output and JSON export
+Export: Saves structured JSON for further analysis
 
 💡 Examples
-Example 1: Basic Domain Reconnaissance
+Scan a Domain
 bash
 python3 recon_master.py -t example.com
-Enhanced Output includes:
+Output includes:
 
-Domain information from SecurityTrails
+Subdomain enumeration
 
-Enhanced VirusTotal security analysis with risk assessment
+DNS records
 
-Resolved IP information from Shodan
+Security reputation
 
-Geolocation data from IPInfo
+Associated IP addresses
 
-Basic vulnerability assessment
+Geolocation data
 
-Example 2: Comprehensive Subdomain Discovery
+Open ports and services
+
+Scan an IP Address
 bash
-python3 recon_master.py -t example.com --enum-subs
-New Workflow:
+python3 recon_master.py -t 8.8.8.8
+Output includes:
 
-text
-Phase 1: Passive Discovery (5 sources)
-  → crt.sh certificate transparency logs
-  → HackerTarget API enumeration
-  → ThreatCrowd threat intelligence
-  → AlienVault OTX passive DNS
-  → URLScan.io recent scans
-  
-Phase 2: Active DNS Brute Force
-  → 100+ common subdomains wordlist
-  → Multi-threaded DNS resolution (10 threads)
-  → Active service and port detection
-  
-Phase 3: Results Aggregation
-  → Deduplication across all sources
-  → Source attribution tracking
-  → Statistics and summary generation
-Example 3: Full Security Assessment
+Open ports and services
+
+Geolocation information
+
+Organization details
+
+Security reputation
+
+Historical data
+
+Force Specific Scan Type
 bash
-python3 recon_master.py -t example.com --enum-subs --scan-vulns
-Complete Scan Process:
+# Force domain scan
+python3 recon_master.py -t example.com --type domain
 
-Intelligence Gathering: Multi-API reconnaissance
-
-Asset Discovery: Comprehensive subdomain enumeration
-
-Vulnerability Scanning: 25+ security checks per subdomain
-
-Risk Assessment: Automated scoring and prioritization
-
-Reporting: JSON export with detailed findings
-
-Example 4: Focused Vulnerability Assessment
+# Force IP scan
+python3 recon_master.py -t 192.168.1.1 --type ip
+Run Setup Wizard
 bash
-python3 recon_master.py --enum-only example.com --scan-vulns
-Perfect for:
-
-Continuous security monitoring
-
-Asset inventory and management
-
-Quick security posture assessment
-
-Pre-deployment security checks
-
-Compliance and audit requirements
-
+python3 recon_master.py --setup
 Example Output
-text
+   ╦═╗╔═╗╔═╗╔═╗╔╗╔  ╔╦╗╔═╗╔═╗╔╦╗╔═╗╦═╗
+    ╠╦╝║╣ ║  ║ ║║║║  ║║║╠═╣╚═╗ ║ ║╣ ╠╦╝
+    ╩╚═╚═╝╚═╝╚═╝╝╚╝  ╩ ╩╩ ╩╚═╝ ╩ ╚═╝╩╚═
+
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    Professional Bug Bounty Reconnaissance Tool
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+    Version: 1.0.0
+    Author:  Abdulbasid Yakubu | cy30rt
+
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    Multi-Source Intelligence Gathering
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 ═══════════════════════════════════════════════
-  VULNERABILITY SCAN SUMMARY
+  INITIATING RECONNAISSANCE
 ═══════════════════════════════════════════════
-🔴 Critical Risk: 2
-🟠 High Risk: 3  
-🟡 Medium Risk: 5
-🟢 Low Risk: 8
-✅ Secure: 22
+  Target: example.com
+  Type: auto
+  Time: 2024-01-15 14:30:22
 ═══════════════════════════════════════════════
 
-Sample Findings:
-  🔴 admin.example.com - Risk: CRITICAL (65 points)
-      • Exposed .env File (+35)
-      • Missing 3 Security Headers (+15)
-      • Self-Signed SSL Certificate (+10)
-      • Server Information Disclosure (+5)
-  
-  🟢 www.example.com - Risk: SECURE (0 points)
-      • All security headers present
-      • Valid SSL certificate
-      • No vulnerabilities detected
+[*] Detected domain target - running domain-based reconnaissance
+
+[*] Querying SecurityTrails database...
+[+] SecurityTrails: Domain data retrieved
+    Subdomains discovered: 15
+    Sample subdomains: www, mail, ftp, blog, shop
+
+[*] Querying VirusTotal database...
+[+] VirusTotal: Security analysis completed
+    Malicious detections: 0
+    Suspicious detections: 0
+    Clean detections: 85
+    ✓ Target appears clean
+
+[*] Resolving domain to IP address...
+[+] Resolved IP: 93.184.216.34
+
+[*] Querying Shodan database...
+[+] Shodan: Data retrieved successfully
+    IP: 93.184.216.34
+    Organization: EDGECAST
+    Country: United States
+    OS: N/A
+    Open Ports: 80, 443
+
+[*] Querying IPInfo database...
+[+] IPInfo: Geolocation data retrieved
+    Location: Los Angeles, California, US
+    Organization: AS15133 Edgecast Inc.
+    Timezone: America/Los_Angeles
+    Coordinates: 34.0522,-118.2437
+
+═══════════════════════════════════════════════
+  RECONNAISSANCE COMPLETED
+═══════════════════════════════════════════════
+  APIs queried: 4/4
+  Data points collected: 2847
+  Report: recon_example_com_20240115_143022.json
+═══════════════════════════════════════════════
 📊 Output
-Enhanced JSON Report Structure
+JSON Report Structure
+Results are automatically saved in timestamped JSON files:
+
 json
 {
-  "target": "example.com",
-  "timestamp": "2024-01-15T14:30:22.123456",
-  "scan_type": "full",
-  "subdomain_enum": {
-    "total_found": 42,
-    "sources": {
-      "crtsh": ["sub1.example.com", "sub2.example.com"],
-      "hackertarget": ["www.example.com"],
-      "threatcrowd": ["api.example.com"],
-      "alienvault": ["dev.example.com"],
-      "urlscan": ["test.example.com"],
-      "dns_brute_force": ["admin.example.com", "mail.example.com"]
+    "target": "example.com",
+    "timestamp": "2024-01-15T14:30:22.123456",
+    "scan_type": "auto",
+    "resolved_ip": "93.184.216.34",
+    "shodan": {
+        "ip_str": "93.184.216.34",
+        "org": "EDGECAST",
+        "country_name": "United States",
+        "ports": [80, 443],
+        "vulns": []
     },
-    "vulnerability_scans": [
-      {
-        "subdomain": "admin.example.com",
-        "accessible": true,
-        "risk_level": "CRITICAL",
-        "risk_score": 65,
-        "issues_found": [
-          "Exposed .env File",
-          "Missing 3 Security Headers",
-          "Self-Signed SSL Certificate",
-          "Server Information Disclosure"
-        ],
-        "http_info": {
-          "http": true,
-          "https": true,
-          "http_status": 200,
-          "redirects_to_https": true
-        },
-        "ssl_info": {
-          "valid": false,
-          "expired": false,
-          "self_signed": true,
-          "issuer": "Self-Signed",
-          "subject": "admin.example.com",
-          "expiry_date": "2024-12-31T23:59:59",
-          "days_until_expiry": 350
-        },
-        "vulnerabilities": {
-          "missing_security_headers": ["HSTS", "CSP", "X-Frame-Options"],
-          "clickjacking_vulnerable": true,
-          "cors_misconfiguration": false,
-          "directory_listing": false,
-          "exposed_git": false,
-          "exposed_env": true,
-          "exposed_backup": false,
-          "server_info_disclosure": true,
-          "server_header": "Apache/2.4.41"
-        },
-        "takeover_check": {
-          "vulnerable": false,
-          "service": null,
-          "fingerprint": null
+    "securitytrails": {
+        "subdomains": ["www", "mail", "ftp"],
+        "dns_records": {},
+        "whois": {}
+    },
+    "ipinfo": {
+        "ip": "93.184.216.34",
+        "city": "Los Angeles",
+        "region": "California",
+        "country": "US",
+        "loc": "34.0522,-118.2437",
+        "org": "AS15133 Edgecast Inc."
+    },
+    "virustotal": {
+        "data": {
+            "attributes": {
+                "last_analysis_stats": {
+                    "malicious": 0,
+                    "suspicious": 0,
+                    "harmless": 85
+                }
+            }
         }
-      }
-    ]
-  },
-  "apis_used": 4,
-  "scan_duration_seconds": 215.7,
-  "total_vulnerabilities_found": 18,
-  "risk_distribution": {
-    "critical": 2,
-    "high": 3,
-    "medium": 5,
-    "low": 8,
-    "secure": 24
-  }
+    }
 }
 File Naming Convention
-text
-recon_TARGET_TIMESTAMP.json
+Format: recon_TARGET_TIMESTAMP.json
+
 Example: recon_example_com_20240115_143022.json
 
-subdomains_DOMAIN_TIMESTAMP.json  
-Example: subdomains_example_com_20240115_143022.json
-Termux Output Location
-Default: /storage/emulated/0/recon_*.json
+Location: Current working directory
 
-Home directory: ~/recon_*.json
+Termux Output Location:
 
-Current directory: ./recon_*.json
-
-🐛 Troubleshooting
-Common Issues & Solutions
-Issue: "Module not found" errors
 bash
-# Solution: Install dependencies
-pip3 install requests urllib3
-# or for Termux
-pip install requests urllib3
-Issue: API key errors
+# Default location
+/storage/emulated/0/recon_*.json
+
+# Or in home directory
+~/recon_*.json
+🔧 Troubleshooting
+Common Issues and Solutions
+Issue: "No module named 'requests'"
+
 bash
-# Run setup wizard
+# Solution
+pip3 install -r requirements.txt  # Linux
+pip install -r requirements.txt   # Termux
+Issue: "API key not found" or "API key not configured"
+
+bash
+# Solution: Run setup wizard
 python3 recon_master.py --setup
+Issue: "Permission denied" when running script
 
-# Or manually configure
-nano config.json
-Issue: SSL certificate errors (Termux)
 bash
-pkg install openssl-tool
-Issue: Permission denied
-bash
+# Solution: Make script executable
 chmod +x recon_master.py
-Issue: Rate limit exceeded
-Wait for rate limit reset
+chmod +x install.sh
+Issue: "Invalid API key" errors
+
+Verify your API keys are correct
+
+Check that keys are properly saved in config.json
+
+Ensure keys have not expired
+
+Visit the respective API provider's dashboard
+
+Issue: "Request timeout" errors
+
+Check your internet connection
+
+Some APIs may be temporarily down
+
+Try increasing timeout values in the code
+
+Use a VPN if APIs are blocked in your region
+
+Issue: API rate limit exceeded
+
+Wait for the rate limit window to reset
+
+Consider upgrading to paid API plans
+
+Reduce scan frequency
 
 Use fewer simultaneous scans
 
-Consider API plan upgrades
+Issue: "Could not resolve domain"
 
-Implement custom delays
+Verify the domain name is correct
 
-Issue: Vulnerability scan timeouts
-Reduce concurrent scans
+Check DNS settings
 
-Increase timeout values
+Try using a public DNS server (8.8.8.8)
 
-Check network connectivity
-
-Verify target accessibility
-
-Debug Mode
-For detailed troubleshooting:
+Termux-Specific Issues
+Issue: "Command not found" or "python3 not found"
 
 bash
-# Check Python version
-python3 --version
+# Use python instead of python3
+python recon_master.py -t example.com
+Issue: SSL certificate errors
 
-# Verify dependencies
-pip3 list | grep -E "requests|urllib3"
+bash
+pkg install openssl-tool
+Issue: No storage permission
 
-# Test basic connectivity
-curl -I https://google.com
+bash
+termux-setup-storage
+Issue: Can't save output files
 
-# Check config file
-cat config.json
+bash
+# Save to home directory
+cd ~
+python recon_master.py -t example.com
+Debug Mode
+For detailed error information, Python will display full tracebacks. If you encounter persistent issues:
 
-# Test with verbose output
-python3 -c "import requests; print('Requests version:', requests.__version__)"
+Check Python version: python3 --version or python --version
+
+Verify all dependencies: pip3 list or pip list
+
+Test internet connectivity: ping google.com
+
+Validate API keys in config.json
+
+Check file permissions: ls -la
+
 🤝 Contributing
+Contributions are welcome and appreciated! Here's how you can help:
+
 How to Contribute
 Fork the repository
 
@@ -802,11 +588,11 @@ Ensure backward compatibility
 Add error handling for new features
 
 Areas for Contribution
-Additional vulnerability checks
+Additional API integrations
 
 Performance optimizations
 
-New API integrations
+New output formats (CSV, HTML)
 
 GUI implementation
 
@@ -814,50 +600,34 @@ Docker containerization
 
 Additional reconnaissance modules
 
-Enhanced reporting formats
-
 ⚖️ Legal Disclaimer
 IMPORTANT: READ CAREFULLY BEFORE USING THIS TOOL
+
 Terms of Use
 This tool is provided for educational and authorized security testing purposes only.
 
-✅ Permitted Uses
-Testing systems you own or have explicit written permission to test
+✅ DO: Use on systems you own or have explicit written permission to test
 
-Authorized penetration testing engagements
+✅ DO: Follow responsible disclosure practices
 
-Bug bounty programs with explicit scope permission
+✅ DO: Respect all applicable laws and regulations
 
-Educational and research purposes
+✅ DO: Honor API terms of service and rate limits
 
-Security awareness training
+❌ DO NOT: Use for unauthorized access or malicious purposes
 
-❌ Prohibited Uses
-Unauthorized access to computer systems
+❌ DO NOT: Violate any laws or regulations
 
-Violating laws or regulations
+❌ DO NOT: Harm or disrupt systems or networks
 
-Disrupting services or networks
+Legal Notice
+Unauthorized access to computer systems is illegal under various laws including the Computer Fraud and Abuse Act (CFAA)
 
-Malicious activities
+Users are solely responsible for ensuring their use complies with all applicable laws
 
-Privacy violations
+The author assumes NO LIABILITY for misuse of this software
 
-Legal Compliance
-By using this tool, you agree to:
-
-Obtain proper authorization before scanning
-
-Comply with all applicable laws
-
-Respect API terms of service and rate limits
-
-Follow responsible disclosure practices
-
-Accept full responsibility for your actions
-
-No Warranty
-This software is provided "as is" without warranty of any kind. The author assumes no liability for damages resulting from use of this tool.
+This tool should only be used in accordance with bug bounty program rules and with proper authorization
 
 Responsible Disclosure
 If you discover vulnerabilities using this tool:
@@ -872,19 +642,21 @@ Allow reasonable time for remediation
 
 Respect bug bounty program rules
 
+By using this tool, you agree to use it responsibly and ethically.
+
 👤 Author
 Abdulbasid Yakubu | cy30rt
 
 Professional Bug Bounty Hunter & Security Researcher
 
-This tool was created to streamline the reconnaissance phase of bug bounty hunting and security assessments. Version 1.2.0 introduces comprehensive vulnerability scanning capabilities to provide end-to-end security assessment.
+This tool was created to streamline the reconnaissance phase of bug bounty hunting and security assessments. It represents hundreds of hours of development, testing, and refinement to provide the security community with a reliable, professional-grade tool.
 
 Connect
-GitHub: @abdulcybort
+GitHub: Check my other security projects
 
-Twitter: @cy30rt
+Bug Bounty: Active on major platforms
 
-Professional: Bug Bounty platforms and security communities
+Security Research: Focused on web application security
 
 Acknowledgments
 Special thanks to:
@@ -893,16 +665,18 @@ The bug bounty community for inspiration and feedback
 
 API providers (Shodan, SecurityTrails, IPInfo, VirusTotal) for their excellent services
 
-Beta testers who helped refine the vulnerability scanning features
+Beta testers who helped refine this tool
 
 Open source contributors and maintainers
 
-Security researchers sharing knowledge and techniques
-
 📄 License
 This project is licensed under the MIT License.
+MIT License
 
-text
+## 📄 License
+
+This project is licensed under the **MIT License**.
+
 MIT License
 
 Copyright (c) 2024 Abdulbasid Yakubu | cy30rt
@@ -928,12 +702,12 @@ SOFTWARE.
 Getting Help
 GitHub Issues: Report bugs or request features
 
+GitHub Discussions: Join the community discussion
+
 Documentation: This README serves as comprehensive documentation
 
-Community: Security forums and bug bounty communities
-
 Reporting Bugs
-When reporting bugs, please include:
+When reporting bugs, please include the following information:
 
 Python Version: python3 --version or python --version
 
@@ -945,95 +719,104 @@ Steps to Reproduce: Exact commands and inputs used
 
 Expected vs Actual Behavior: What you expected vs what happened
 
-Feature Requests
-When requesting features, please:
-
-Describe the use case and benefits
-
-Suggest implementation approach
-
-Reference similar tools if applicable
-
-Consider backward compatibility
-
 📈 Roadmap
-🚀 Planned Features (v1.3.0+)
-Additional Vulnerability Checks
+🚀 Planned Features
+Additional API Integrations: Censys, Hunter.io, BuiltWith, etc.
 
-SQL injection detection
+Parallel Execution: Multi-threaded API queries for faster results
 
-XSS vulnerability scanning
+Export Formats: CSV, HTML, PDF reports with templates
 
-Open redirect detection
+Web Interface: Browser-based GUI for easier usage
 
-SSRF vulnerability checks
+Automated Reporting: Generate professional PDF reports
 
-Enhanced API Integrations
+Result Caching: Local database to avoid duplicate API calls
 
-Censys integration
+Proxy Support: Rotating proxies and Tor integration
 
-Hunter.io email enumeration
+Custom Modules: Plugin system for user-created modules
 
-BuiltWith technology detection
+Scheduled Scans: Automated periodic reconnaissance
 
-BinaryEdge threat intelligence
-
-Performance Improvements
-
-Parallel scanning optimization
-
-Result caching system
-
-Distributed scanning capabilities
-
-Reporting Enhancements
-
-HTML report generation
-
-PDF executive summaries
-
-Dashboard visualization
-
-Trend analysis
-
-Usability Features
-
-Web interface
-
-API endpoint for automation
-
-Scheduled scanning
-
-Team collaboration features
+Tool Integration: Export to Burp Suite, Nmap, etc.
 
 📋 Version History
-v1.0.0: Initial release with core API integration
+v1.0.0 (Current) - Initial release with core functionality
 
-v1.1.0: Enhanced error handling and performance
+v1.1.0 (Planned) - Performance improvements and bug fixes
 
-v1.2.0: Vulnerability Scanner Edition (Current)
+v1.2.0 (Planned) - Additional API integrations
 
-Advanced vulnerability scanning module
+v2.0.0 (Future) - Major rewrite with advanced features
 
-Risk assessment and scoring system
+🌟 Support the Project
+If you find ReconMaster useful for your bug bounty hunting or security research:
 
-Multiple passive intelligence sources
+⭐ Star the Repository
+Give the project a star on GitHub to show your support and help others discover it.
 
-Comprehensive security checks
+🐛 Report Issues
+Found a bug? Have a feature request? Open an issue on GitHub.
 
-v1.3.0 (Planned): Additional vulnerability checks and performance
+🤝 Contribute
+Submit pull requests with improvements
 
-v2.0.0 (Future): Major rewrite with advanced features
+Add new API integrations
+
+Improve documentation
+
+Share your use cases
+
+📢 Spread the Word
+Share on social media (Twitter, LinkedIn, Reddit)
+
+Mention in bug bounty communities
+
+Write blog posts or tutorials
+
+Include in your security toolkit lists
+
+☕ Support the Developer
+Follow on GitHub for updates
+
+Connect on professional networks
+
+Share feedback and suggestions
 
 <div align="center">
 Made with ❤️ by Abdulbasid Yakubu | cy30rt
 
 For Bug Bounty Hunters, By a Bug Bounty Hunter
 
-Version 1.2.0 - Vulnerability Scanner Edition
+If you find this tool useful, please give it a ⭐ on GitHub!
 
-⭐ If you find this tool useful, please give it a star on GitHub! ⭐
+Report Bug ·
+Request Feature ·
+View Documentation
 
-Happy Hunting & Stay Secure! 🎯🔒
+📢 Join the Community
 
-</div>
+Share your success stories
+
+Submit your improvements
+
+Help others learn reconnaissance
+
+🔐 Stay Ethical
+
+Always get proper authorization
+
+Respect rate limits and ToS
+
+Follow responsible disclosure
+
+🚀 Keep Learning
+
+Continuous improvement is key
+
+Share knowledge with others
+
+Build a safer internet together
+
+</div> 
