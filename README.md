@@ -1,4 +1,3 @@
-markdown
 # 🔍 ReconMaster - Advanced Reconnaissance Tool
 
 ![Version](https://img.shields.io/badge/version-3.0.0-blue)
@@ -10,6 +9,8 @@ markdown
 
 **Professional Bug Bounty & Penetration Testing Reconnaissance Tool**  
 *Automated subdomain enumeration, port scanning, technology detection, and threat intelligence gathering*
+
+---
 
 ## ✨ Features
 
@@ -42,11 +43,10 @@ markdown
 | **IPInfo** | ✅ | Geolocation data |
 | **BuiltWith/Wappalyzer** | ✅ | Technology stack analysis |
 
-
 ## 📦 Installation
 
 ### Kali Linux / Ubuntu / Debian
-
+bash
 # Clone repository
 git clone https://github.com/abdulcybort/ReconMaster.git
 cd ReconMaster
@@ -116,13 +116,14 @@ python recon_master.py -t 1.1.1.1 --advanced --risk-assessment
 Checks: Abuse score, threat intelligence, open ports
 
 Batch Processing
-bash
+
 # Create targets.txt with list of domains
 for domain in $(cat targets.txt); do
     python recon_master.py -t $domain --enum-subs -o results/$domain.json
 done
 📊 Sample Output
 Terminal Display
+text
 ===============================================
   ENHANCED SUBDOMAIN ENUMERATION ENGINE
 ===============================================
@@ -179,7 +180,7 @@ json
   }
 }
 🛠️ Command Line Options
-text
+
 Basic Options:
   -t, --target TARGET    Target domain or IP address
   --type {auto,ip,domain} Target type (default: auto)
@@ -206,6 +207,7 @@ Info Options:
   -h, --help            Show this help message
   -v, --version         Show version information
 📁 Project Structure
+
 ReconMaster/
 ├── recon_master.py          # Main tool
 ├── config.json              # API configuration
@@ -283,7 +285,6 @@ Distributed under the MIT License. See LICENSE for more information.
 Attribution
 If you use ReconMaster in your work, please credit:
 
-text
 ReconMaster by Abdulbasid Yakubu
 https://github.com/abdulcybort/ReconMaster
 👨‍💻 Author
@@ -331,21 +332,23 @@ Respecting privacy and data protection laws
 Common Issues & Solutions:
 SSL Certificate Errors
 
+text
 The tool automatically handles SSL issues, but if you see:
 "certificate verify failed: Hostname mismatch"
 This is normal - the tool will retry with HTTP
 Rate Limiting
 
+
 [!] HackerTarget: Rate limited or no data
 Wait a few minutes or use --quick mode
 DNS Resolution Failures
 
-bash
+
 # Install dnspython
 pip install dnspython
 API Key Issues
 
-bash
+
 # Reset configuration
 rm config.json
 python recon_master.py --setup
@@ -370,15 +373,60 @@ https://api.star-history.com/svg?repos=abdulcybort/ReconMaster&type=Date
 
 Happy Reconnaissance! Stay Ethical, Stay Safe. 🔐
 
+📝 Copyright & Attribution
+Copyright
+© 2024 Abdulbasid Yakubu. All rights reserved.
+
+License Terms
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Usage Terms
+When using ReconMaster, you agree to:
+
+Use it only for authorized security testing
+
+Respect all applicable laws and regulations
+
+Give proper attribution when sharing results
+
+Not hold the author liable for any misuse
+
+Citation
+If you use ReconMaster in research or publications:
+
+bibtex
+@software{ReconMaster2024,
+  author = {Yakubu, Abdulbasid},
+  title = {ReconMaster: Advanced Reconnaissance Tool},
+  year = {2024},
+  publisher = {GitHub},
+  url = {https://github.com/abdulcybort/ReconMaster}
+}
+Contact
+For questions, support, or collaboration:
+
+Email: contact@cy30rt.me
+
+GitHub Issues: https://github.com/abdulcybort/ReconMaster/issues
+
+Twitter: @cy30rt
+
 Last Updated: January 2024 | Version: 3.0.0
 
+**Key additions at the end:**
 
-This professional README now has:
-1. ✅ **Correct GitHub username**: `abdulcybort`
-2. ✅ **Proper links**: All pointing to your actual GitHub
-3. ✅ **Professional formatting**: With tables, badges, and clear sections
-4. ✅ **Complete documentation**: Installation, usage, examples, troubleshooting
-5. ✅ **Legal compliance**: Clear ethical guidelines
-6. ✅ **Star history chart**: Visual representation of project growth
+1. **📝 Copyright Section** - Clear copyright notice
+2. **📄 License Terms** - MIT License reference
+3. **⚖️ Usage Terms** - Legal agreement for users
+4. **📚 Citation Format** - Proper academic citation
+5. **📧 Contact Information** - Multiple contact methods
+6. **🔄 Version/Date Stamp** - Clear documentation of updates
 
-Perfect for GitHub! 🚀
+This gives you:
+- ✅ **Legal protection** with clear copyright
+- ✅ **Professional appearance** for GitHub
+- ✅ **Proper attribution** for academic/research use
+- ✅ **Contact options** for collaboration
+- ✅ **Version control** for tracking updates
+
+Perfect for a professional open-source project! 🚀
