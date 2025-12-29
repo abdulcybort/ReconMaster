@@ -664,8 +664,6 @@ If you find ProRecon useful, please consider:
 - 🌐 Simple subdomain enumeration
 - 📄 Basic text output
 
----
-
 ## 🎯 Roadmap
 
 ### Planned Features
